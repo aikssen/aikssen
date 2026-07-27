@@ -5,7 +5,8 @@ particular interest in the parts that decide whether software survives contact w
 real users: contracts between services, quotas that reconcile, failure paths that
 were designed rather than discovered, and release gates that are allowed to say no.
 
-I write about that at **[bitkode.dev](https://bitkode.dev)**, in English and Spanish.
+I write about that at **[bitkode.dev](https://bitkode.dev)** — a publication I also
+designed and built, and the last entry below.
 
 ---
 
@@ -61,6 +62,22 @@ An event-driven notification pipeline, split across three repositories:
 - **[notifications-dispatch-service](https://github.com/aikssen/notifications-dispatch-service)** — a background worker that consumes Kafka events, persists them for idempotency and auditability, and delivers to client-defined webhooks under subscription rules.
 - **[notifications-subscription-service](https://github.com/aikssen/notifications-subscription-service)** — resolves subscriptions and simulates webhook success and failure, so the whole flow runs end to end locally.
 - **[notifications-self-service](https://github.com/aikssen/notifications-self-service)** — the self-service surface over it.
+
+### [bitkode.dev](https://bitkode.dev) · Astro + Cloudflare
+
+An engineering publication I designed and ship, not a hosted blog.
+
+Astro rendered at the edge on Cloudflare Workers, four content collections, and every
+piece published as paired English and Spanish versions rather than machine
+translations. Client-side search through Pagefind, RSS and sitemap, and a design
+system where each engineering domain carries its own colour tint across light and
+dark themes.
+
+The diagrams are components, not screenshots — one bespoke Astro component per
+concept, so an explanation gets corrected in a pull request instead of redrawn.
+
+Its editorial standard is written down as well: article template, writing guide,
+cover art direction. Same reason the code has specifications.
 
 ---
 
